@@ -1,0 +1,23 @@
+# Secrets - never commit these
+.env
+backend/.env
+rag-engine/.env
+
+# Node
+backend/node_modules/
+npm-debug.log
+
+# Python
+rag-engine/venv/
+rag-engine/__pycache__/
+rag-engine/**/__pycache__/
+*.pyc
+
+# RAG engine data (grows large; back it up separately, don't version it)
+rag-engine/data/uploads/*
+!rag-engine/data/uploads/.gitkeep
+rag-engine/storage/*.faiss
+rag-engine/storage/*.db
+
+# OS
+.DS_Store

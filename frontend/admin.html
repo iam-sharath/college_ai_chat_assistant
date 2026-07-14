@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Knowledge Base Admin</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <header>
+            <span class="logo-emoji">🛠️</span>
+            <div>
+                <h1>Knowledge Base Admin</h1>
+                <p>Upload or remove documents the chatbot learns from</p>
+            </div>
+        </header>
+
+        <!-- Login gate -->
+        <section id="login-section" class="card">
+            <h2>Admin Key</h2>
+            <p class="hint">Enter the admin key configured in your backend's <code>.env</code> (ADMIN_API_KEY).</p>
+            <div class="row">
+                <input type="password" id="admin-key-input" placeholder="Admin key" autocomplete="off" />
+                <button id="login-btn">Unlock</button>
+            </div>
+            <p id="login-error" class="error-text"></p>
+        </section>
+
+        <!-- Main admin UI (hidden until unlocked) -->
+        <div id="admin-main" style="display:none;">
+            <section class="card">
+                <h2>Upload Document</h2>
+                <p class="hint">Supported: PDF, DOCX, TXT, MD. The document is chunked, embedded, and immediately searchable.</p>
+                <div class="row">
+                    <input type="file" id="file-input" accept=".pdf,.docx,.txt,.md" />
+                    <button id="upload-btn">Upload</button>
+                </div>
+                <p id="upload-status" class="status-text"></p>
+            </section>
+
+            <section class="card">
+                <div class="section-header">
+                    <h2>Knowledge Base Documents</h2>
+                    <button id="refresh-btn" class="secondary">Refresh</button>
+                </div>
+                <table id="doc-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Chunks</th>
+                            <th>Status</th>
+                            <th>Uploaded</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="doc-table-body">
+                    </tbody>
+                </table>
+                <p id="empty-state" class="hint" style="display:none;">No documents yet. Upload one above.</p>
+            </section>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

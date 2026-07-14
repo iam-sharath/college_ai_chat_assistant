@@ -1,0 +1,18 @@
+# RAG Engine Dependencies
+
+flask==3.0.0
+flask-cors==4.0.0
+twilio==9.3.0
+
+sentence-transformers==2.7.0   # embeddings + cross-encoder reranker
+faiss-cpu==1.9.0                # vector search
+rank-bm25==0.2.2                # keyword search (hybrid retrieval)
+
+pypdf==4.3.1                     # PDF text extraction
+python-docx==1.1.2               # DOCX text extraction
+rapidfuzz==3.9.6                 # fast typo correction for query rewriting
+
+requests==2.31.0
+python-dotenv==1.0.0
+numpy==1.26.4
+werkzeug==3.0.3

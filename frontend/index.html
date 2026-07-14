@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>College AI Assistant</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.5/purify.min.js"></script>
+</head>
+<body>
+    <div class="chat-wrapper">
+        <header>
+            <div class="logo-container">
+                <span class="logo-emoji">🎓</span>
+            </div>
+            <div class="header-info">
+                <h1>College AI Assistant</h1>
+                <p>Campus Assistant • Online</p>
+            </div>
+        </header>
+
+        <div id="chat-container" class="chat-container">
+            <div class="message ai-message">
+                Hello! I am your College Assistant. Ask me anything about courses, admissions, or faculty!
+            </div>
+        </div>
+
+        <form id="chat-form" class="input-area">
+            <input type="text" id="user-input" placeholder="Type your message here..." autocomplete="off" required />
+            <button type="submit" id="send-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
