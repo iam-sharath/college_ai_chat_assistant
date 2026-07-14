@@ -1,6 +1,7 @@
 const chatForm = document.getElementById('chat-form');
 const chatContainer = document.getElementById('chat-container');
 const userInput = document.getElementById('user-input');
+const API_BASE_URL = 'https://unheaded-braydon-semipronely.ngrok-free.dev';
 
 function addMessage(text, sender) {
     const div = document.createElement('div');
@@ -45,11 +46,14 @@ chatForm.addEventListener('submit', async (e) => {
 
     try {
         // Goes through the Node backend (which validates input and talks to the RAG engine)
-        const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message }),
-        });
+        const response = await fetch(`${API_BASE_URL}/api/chat`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true',
+    },
+    body: JSON.stringify({ message }),
+});
 
         const result = await response.json();
         removeTypingIndicator();
